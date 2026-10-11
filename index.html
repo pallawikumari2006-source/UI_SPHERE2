@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GDG Fest 2026 · Code, Cloud, AI &amp; Innovation</title>
+  <meta name="description" content="A 3-day celebration of code, cloud, AI and innovation by Google Developer Group." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <canvas id="bg"></canvas>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#home" class="brand">
+      <span class="logo"><b class="b">&lt;</b><b class="r">G</b><b class="y">D</b><b class="g">G</b><b class="b">&gt;</b></span>
+      <span class="brand-text"><strong>GDG Fest <em>2026</em></strong><small>Google Developer Group</small></span>
+    </a>
+    <nav class="links" id="links">
+      <a href="#about">About</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#tracks">Tracks</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#sponsors">Sponsors</a>
+      <a href="#faq">FAQs</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☀</button>
+      <button class="btn primary sm" data-open-register>Register Now ✦</button>
+      <button class="icon-btn burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="pill reveal">
+        <span class="dot"></span><span class="mono green">3 Days of Technical Immersion</span>
+        <span class="sep">|</span><span>📅 November 20 – 22, 2026</span>
+      </div>
+      <p class="eyebrow mono reveal">&lt; GOOGLE DEVELOPER GROUP /&gt;</p>
+      <h1 class="reveal">GDG Fest <span class="grad" id="typed">2026</span></h1>
+      <p class="sub reveal">A 3-day celebration of <span class="rot" id="rotator">Code</span> &amp; Innovation<br />Organized by <a href="#about" class="accent">GDG on Campus</a></p>
+
+      <p class="label reveal">EVENT LAUNCH COUNTDOWN</p>
+      <div class="countdown reveal" id="countdown">
+        <div class="tile"><span class="num accent" data-unit="d">00</span><span class="cap">DAYS</span></div>
+        <div class="tile"><span class="num red" data-unit="h">00</span><span class="cap">HOURS</span></div>
+        <div class="tile"><span class="num yellow" data-unit="m">00</span><span class="cap">MINUTES</span></div>
+        <div class="tile"><span class="num green" data-unit="s">00</span><span class="cap">SECONDS</span></div>
+      </div>
+
+      <div class="cta reveal">
+        <button class="btn primary" data-open-register>Register for Events ✦</button>
+        <a href="#schedule" class="btn ghost">Explore Schedule →</a>
+      </div>
+
+      <div class="stats reveal">
+        <div><b data-count="1500">0</b>+<span>Attendees</span></div>
+        <div><b data-count="40">0</b>+<span>Speakers</span></div>
+        <div><b data-count="24">0</b><span>Workshops</span></div>
+        <div><b data-count="48">0</b>h<span>Hack Sprint</span></div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">⌄</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="head reveal">
+        <span class="chip accent-chip">ABOUT THE FEST</span>
+        <h2>Where Developers Learn, Build &amp; Connect</h2>
+        <p>Three days of keynotes, hands-on labs, a 48-hour hackathon and a community that loves building with Google technologies.</p>
+      </div>
+      <div class="grid3">
+        <article class="card tilt reveal"><div class="ico">🎤</div><h3>Keynotes &amp; Talks</h3><p>Hear from Google Developer Experts and industry leaders on AI, cloud and the future of the web.</p></article>
+        <article class="card tilt reveal"><div class="ico">🛠️</div><h3>Hands-on Labs</h3><p>Build real projects with Gemini, Firebase, Flutter and Google Cloud, guided step by step.</p></article>
+        <article class="card tilt reveal"><div class="ico">🏆</div><h3>Hack Sprint</h3><p>Team up, ship an idea in 48 hours and compete for prizes, cloud credits and mentorship.</p></article>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="section alt" id="schedule">
+      <div class="head reveal">
+        <span class="chip yellow-chip">EVENT TIMELINE</span>
+        <h2>Three Days. One Journey.</h2>
+        <p>Pick a day and tap a session to add it to your personal plan.</p>
+      </div>
+      <div class="tabs reveal" id="dayTabs" role="tablist">
+        <button class="tab active" data-day="0">Day 1 <small>Nov 20</small></button>
+        <button class="tab" data-day="1">Day 2 <small>Nov 21</small></button>
+        <button class="tab" data-day="2">Day 3 <small>Nov 22</small></button>
+      </div>
+      <ul class="timeline" id="timeline"></ul>
+      <p class="plan reveal" id="planInfo">Your plan: <b>0</b> sessions saved</p>
+    </section>
+
+    <!-- TRACKS -->
+    <section class="section" id="tracks">
+      <div class="head reveal">
+        <span class="chip yellow-chip">⛁ CORE TECHNICAL TRACKS</span>
+        <h2>Workshops &amp; Specialization Tracks</h2>
+        <p>Master high-demand Google Cloud, AI, Web and Mobile skills through a curated curriculum.</p>
+      </div>
+      <div class="filters reveal" id="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="ai">AI / ML</button>
+        <button class="filter" data-filter="cloud">Cloud</button>
+        <button class="filter" data-filter="web">Web</button>
+        <button class="filter" data-filter="mobile">Mobile</button>
+        <input type="search" id="trackSearch" placeholder="Search workshops…" aria-label="Search workshops" />
+      </div>
+      <div class="grid3" id="trackGrid"></div>
+      <p class="empty" id="trackEmpty" hidden>No workshops match your search 🔍</p>
+    </section>
+
+    <!-- SPEAKERS -->
+    <section class="section alt" id="speakers">
+      <div class="head reveal">
+        <span class="chip red-chip">SPEAKERS</span>
+        <h2>Meet the Minds Behind the Talks</h2>
+        <p>Hover or tap a card to learn more.</p>
+      </div>
+      <div class="grid4" id="speakerGrid"></div>
+    </section>
+
+    <!-- SPONSORS -->
+    <section class="section" id="sponsors">
+      <div class="head reveal">
+        <span class="chip green-chip">SPONSORS &amp; ECOSYSTEM PARTNERS</span>
+        <h2>Powered by Industry Pioneers</h2>
+        <p>Huge gratitude to our sponsors supporting developer innovation, cloud credits and hackathon awards.</p>
+      </div>
+      <p class="label center">TITLE SPONSOR</p>
+      <div class="title-sponsor card tilt reveal"><h3 class="accent">Google Cloud ↗</h3><p>Title sponsor supporting developer education, cloud credits and AI infrastructure.</p></div>
+      <p class="label center">PLATINUM &amp; GOLD SPONSORS</p>
+      <div class="sponsor-row">
+        <div class="card sp reveal"><b>GitHub</b><span class="yellow mono">PLATINUM PARTNER</span></div>
+        <div class="card sp reveal"><b>Firebase</b><span class="yellow mono">PLATINUM PARTNER</span></div>
+        <div class="card sp reveal"><b>Postman</b><span class="yellow mono">GOLD PARTNER</span></div>
+        <div class="card sp reveal"><b>JetBrains</b><span class="yellow mono">GOLD PARTNER</span></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section alt" id="faq">
+      <div class="head reveal">
+        <span class="chip accent-chip">FAQ</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq" id="faqList"></div>
+      <p class="foot-note">Still have questions? Email <a class="accent" href="mailto:hello@gdgfest.dev">hello@gdgfest.dev</a> or reach out on our Discord server.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 GDG Fest · Built with 💙 by the community. Not an official Google event.</p>
+  </footer>
+
+  <!-- REGISTER MODAL -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+      <button class="icon-btn close" id="closeModal" aria-label="Close">✕</button>
+      <div id="formView">
+        <h3 id="mTitle">Register for GDG Fest ✦</h3>
+        <p class="muted">It's free for verified students and developers.</p>
+        <form id="regForm" novalidate>
+          <label>Full name<input name="name" type="text" required placeholder="Ada Lovelace" /><em class="err"></em></label>
+          <label>Email<input name="email" type="email" required placeholder="you@college.edu" /><em class="err"></em></label>
+          <label>Interest
+            <select name="track" required>
+              <option value="">Choose a track…</option>
+              <option>AI / ML</option><option>Cloud</option><option>Web</option><option>Mobile</option>
+            </select><em class="err"></em>
+          </label>
+          <button class="btn primary full" type="submit">Reserve my seat</button>
+        </form>
+      </div>
+      <div id="successView" hidden>
+        <div class="check">✓</div>
+        <h3>You're in, <span id="who"></span>! 🎉</h3>
+        <p class="muted">We've saved your spot. Check your inbox for a confirmation soon.</p>
+        <button class="btn ghost full" id="doneBtn">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
